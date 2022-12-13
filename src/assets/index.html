@@ -313,6 +313,9 @@
                     <div class="d-flex text-center">
                         <button class="dropdown-item" style="font-size: 0.8rem" @click.stop="incrFont(-1)">A</button>
                         <button class="dropdown-item" style="font-size: 1.2rem" @click.stop="incrFont(1)">A</button>
+                        <button class="toolbar-item" :class="{active: textDirection == 'rtl'}" title="Text Direction" @click.stop="textDirection = textDirection == 'rtl' ? 'ltr' : 'rtl'">
+                            <span class="icon">{% inline "text-rtl.svg" %}</span>
+                        </button>
                     </div>
                 </dropdown>
                 <button class="toolbar-item"
@@ -333,7 +336,7 @@
                  ref="content"
                  class="content px-4 pt-3 pb-5 border-top overflow-auto"
                  :class="{'font-serif': theme.font == 'serif', 'font-monospace': theme.font == 'monospace'}"
-                 :style="{'font-size': theme.size + 'rem'}">
+                 :style="{'font-size': theme.size + 'rem', 'direction': textDirection, 'text-align': textDirection == 'rtl' ? 'right' : 'left'}">
                 <h1><b>{{ itemSelectedDetails.title || 'untitled' }}</b></h1>
                 <div class="text-muted">
                     <div>{{ feedsById[itemSelectedDetails.feed_id].title }}</div>

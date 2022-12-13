@@ -232,6 +232,7 @@ var vm = new Vue({
       'refreshRate': s.refresh_rate,
       'authenticated': app.authenticated,
       'feed_errors': {},
+      'textDirection': 'ltr',
     }
   },
   computed: {

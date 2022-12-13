@@ -393,6 +393,8 @@ select.form-control:not([multiple]):not([size]) {
   margin-left: -0.5rem;
   margin-right: -0.5rem;
   padding: 0.5rem;
+  direction: ltr;
+  text-align: left;
 }
 
 .content a {
